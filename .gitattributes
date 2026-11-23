@@ -1,0 +1,14 @@
+# Normaliza fines de línea en el repo, sin importar core.autocrlf del clon.
+# Sin esto, un checkout en Windows deja los .go en CRLF y `gofmt -l .` los
+# reporta como sin formatear, rompiendo el criterio de terminado del AGENTS.md.
+* text=auto eol=lf
+
+# Scripts de Windows se quedan en CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binarios: git no los toca.
+*.png binary
+*.jpg binary
+*.ico binary

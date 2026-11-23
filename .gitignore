@@ -1,0 +1,81 @@
+# --- Secretos y configuración local -------------------------------------------
+# Todo .env real queda fuera; solo se versiona el ejemplo sin valores.
+.env
+.env.*
+!.env.example
+
+# Credenciales, llaves y certificados: nunca al repo.
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+secrets/
+.secrets/
+*.secret
+
+# --- Datos y dumps -----------------------------------------------------------
+# AGENTS.md: prohibido versionar dumps de datos.
+*.dump
+*.sql.gz
+*.sql.bz2
+dumps/
+data/
+/pgdata/
+
+# Las migraciones SÍ se versionan aunque sean .sql (esto las protege de las
+# reglas de dumps de arriba si algún día se amplían).
+!migrations/*.sql
+
+# --- Artefactos de build y binarios -----------------------------------------
+/bin/
+/dist/
+/tmp/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+*.a
+# Anclados a la raíz: sin la barra inicial ignorarían cmd/webhook-guard/ y
+# cualquier archivo llamado loadgen, que es lo que NO queremos.
+/webhook-guard
+/loadgen
+
+# --- Cobertura y profiling ---------------------------------------------------
+*.cover
+*.prof
+*.pprof
+coverage.*
+*.coverprofile
+
+# --- Logs y temporales -------------------------------------------------------
+*.log
+*.log.*
+*.pid
+*.swp
+*.swo
+*~
+
+# --- IDE y editores ----------------------------------------------------------
+# AGENTS.md: .idea es configuración del IDE, no se toca ni se versiona.
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+
+# --- Sistema operativo -------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+._*
