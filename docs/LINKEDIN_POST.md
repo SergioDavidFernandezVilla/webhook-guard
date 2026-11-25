@@ -46,7 +46,7 @@ It's a reference implementation, not a production SaaS: no auth, loopback by def
 write paths are gated off. The point is the mechanism — duplicates, ordering and late events are
 first-class, not hidden behind a green summary.
 
-Repo: <REPO_LINK>
+Repo: https://github.com/SergioDavidFernandezVilla/webhook-guard
 
 #golang #postgres #distributedSystems #webhooks #idempotency #backend #softwareengineering
 
@@ -71,7 +71,7 @@ measurable instead of theoretical.
 
 Go · PostgreSQL · River · Astro/Svelte. Reference implementation, not production.
 
-Repo: <REPO_LINK>
+Repo: https://github.com/SergioDavidFernandezVilla/webhook-guard
 
 #golang #postgres #webhooks #idempotency #backend
 
@@ -80,7 +80,7 @@ Repo: <REPO_LINK>
 ## Posting notes
 
 - **Numbers:** keep the "local reference run, not a benchmark" caveat. It is in the README table.
-- **Link:** replace `<REPO_LINK>` with `https://github.com/SergioDavidFernandezVilla/webhook-guard`.
+- **Link:** already filled with the repository URL; verify it before posting.
 - **Images:** export diagrams 1–4 from `ARCHITECTURE.md` (Mermaid Live Editor or a screenshot) and
   add one real dashboard screenshot. Keep text short on the image, details in the post.
 - **Tone:** technical and specific. Do not claim production readiness or invent customers/benchmarks.
