@@ -1,0 +1,14 @@
+version: "2"
+
+run:
+  timeout: 5m
+  build-tags:
+    - integration
+
+linters:
+  # Standard set: errcheck, govet, ineffassign, staticcheck, unused.
+  default: standard
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0

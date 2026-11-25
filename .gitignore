@@ -63,6 +63,13 @@ coverage.*
 *.swo
 *~
 
+# --- Dashboard (Astro + Caddy) ----------------------------------------------
+web/node_modules/
+web/dist/
+web/.astro/
+web/.vite/
+npm-debug.log*
+
 # --- IDE y editores ----------------------------------------------------------
 # AGENTS.md: .idea es configuración del IDE, no se toca ni se versiona.
 .idea/

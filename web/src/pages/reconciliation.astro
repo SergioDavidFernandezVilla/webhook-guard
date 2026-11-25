@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.svelte";
+import ReconciliationPage from "../components/ReconciliationPage.svelte";
+---
+
+<Base title="Reconciliation">
+  <div class="app-shell">
+    <Nav client:load initialPath={Astro.url.pathname} />
+    <main id="main" class="page">
+      <ReconciliationPage client:load />
+    </main>
+  </div>
+</Base>

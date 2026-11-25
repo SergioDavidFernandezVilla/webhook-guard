@@ -5,8 +5,11 @@ x-app-env: &app-env
   DATABASE_URL: postgres://${POSTGRES_USER:-webhook}:${POSTGRES_PASSWORD:-webhook}@postgres:5432/${POSTGRES_DB:-webhook_guard}?sslmode=disable
   WEBHOOK_SIGNING_SECRET: ${WEBHOOK_SIGNING_SECRET:-whsec_dev_change_me}
   SIGNATURE_TOLERANCE: ${SIGNATURE_TOLERANCE:-5m}
+  WORKER_QUEUE: ${WORKER_QUEUE:-default}
   LOG_LEVEL: ${LOG_LEVEL:-info}
   LOG_FORMAT: ${LOG_FORMAT:-json}
+  DEMO_MODE: ${DEMO_MODE:-false}
+  LOADGEN_INGEST: ${LOADGEN_INGEST:-false}
 
 services:
   postgres:
@@ -63,7 +66,11 @@ services:
       target: runtime
       args:
         TAGS: naive
-    environment: *app-env
+    environment:
+      <<: *app-env
+      # A dedicated queue keeps the naive worker from consuming jobs enqueued
+      # for the guarded worker and vice versa.
+      WORKER_QUEUE: ${WORKER_QUEUE_NAIVE:-naive}
     ports:
       - "${HTTP_PORT_NAIVE:-8081}:8080"
     depends_on:
@@ -80,12 +87,29 @@ services:
       target: runtime
     entrypoint: ["loadgen"]
     environment:
+      # No depends_on on purpose: the target (app or app-naive) must be chosen
+      # by LOADGEN_TARGET instead of forcing the guarded app to run.
       LOADGEN_TARGET: ${LOADGEN_TARGET:-http://app:8080}
       LOADGEN_WEBHOOK_SECRET: ${WEBHOOK_SIGNING_SECRET:-whsec_dev_change_me}
+      LOADGEN_MODE: ${LOADGEN_MODE:-normal}
+      LOADGEN_EVENTS: ${LOADGEN_EVENTS:-100}
+      LOADGEN_CONCURRENCY: ${LOADGEN_CONCURRENCY:-10}
+      LOADGEN_SEED: ${LOADGEN_SEED:-1}
+      LOADGEN_FORMAT: ${LOADGEN_FORMAT:-text}
+      LOADGEN_ROUTE: ${LOADGEN_ROUTE:-guarded}
+      LOADGEN_RESULT_URL: ${LOADGEN_RESULT_URL:-}
+    restart: "no"
+
+  dashboard:
+    profiles: ["dashboard"]
+    build:
+      context: ./web
+    ports:
+      - "127.0.0.1:${DASHBOARD_PORT:-4321}:80"
     depends_on:
       app:
         condition: service_started
-    restart: "no"
+    restart: unless-stopped
 
 volumes:
   pgdata:

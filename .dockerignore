@@ -7,6 +7,10 @@
 bin/
 dist/
 tmp/
+web/node_modules/
+web/dist/
+web/.astro/
+web/.vite/
 *.exe
 *.test
 *.out

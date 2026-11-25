@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-24T23:45:00Z",
+  "title": "Design System: webhook-guard dashboard",
+  "extensions": {
+    "colorMeta": {
+      "rack": {
+        "role": "neutral",
+        "displayName": "Rack",
+        "canonical": "#0f1415",
+        "tonalRamp": ["#0f1415", "#161d1e", "#1f282a", "#2b3638", "#3a474a", "#59686b", "#8c9a94", "#e8ede9"]
+      },
+      "bay": {
+        "role": "neutral",
+        "displayName": "Bay",
+        "canonical": "#171d1f",
+        "tonalRamp": ["#171d1f", "#1e2629", "#273134", "#334043", "#435154", "#5f6e71", "#8c9a94", "#e8ede9"]
+      },
+      "bay-2": {
+        "role": "neutral",
+        "displayName": "Bay Recess",
+        "canonical": "#1e2629",
+        "tonalRamp": ["#1e2629", "#252f32", "#2e3a3e", "#3a484c", "#4b5b5f", "#6a7a7e", "#95a39c", "#e8ede9"]
+      },
+      "slip": {
+        "role": "neutral",
+        "displayName": "Manila Strip",
+        "canonical": "#e9dfc8",
+        "tonalRamp": ["#2a241b", "#453b2c", "#62543d", "#80704f", "#a08d66", "#c1ae85", "#d7c9aa", "#e9dfc8"]
+      },
+      "slip-2": {
+        "role": "neutral",
+        "displayName": "Strip Shade",
+        "canonical": "#ded1b5",
+        "tonalRamp": ["#262017", "#403729", "#5c4e39", "#79694b", "#988661", "#b7a47f", "#cdbf9f", "#ded1b5"]
+      },
+      "slip-edge": {
+        "role": "neutral",
+        "displayName": "Strip Edge",
+        "canonical": "#b9a986",
+        "tonalRamp": ["#201b12", "#372f21", "#52462f", "#6f5f41", "#8e7c57", "#ab9872", "#b9a986", "#e9dfc8"]
+      },
+      "press": {
+        "role": "neutral",
+        "displayName": "Press Ink",
+        "canonical": "#1d211d",
+        "tonalRamp": ["#1d211d", "#2c332d", "#3c463e", "#4e5a50", "#637064", "#7b897c", "#9ba79a", "#c7d0c5"]
+      },
+      "press-2": {
+        "role": "neutral",
+        "displayName": "Press Secondary",
+        "canonical": "#39413a",
+        "tonalRamp": ["#222822", "#2e372f", "#39413a", "#4a554b", "#5d6a5e", "#768477", "#96a397", "#c7d0c5"]
+      },
+      "press-muted": {
+        "role": "neutral",
+        "displayName": "Press Muted",
+        "canonical": "#5d675f",
+        "tonalRamp": ["#2b302b", "#3a413a", "#4a544b", "#5d675f", "#728076", "#8d9a90", "#aeb8af", "#d6dcd6"]
+      },
+      "chalk": {
+        "role": "neutral",
+        "displayName": "Rack Chalk",
+        "canonical": "#e8ede9",
+        "tonalRamp": ["#2b332f", "#3f4944", "#58635d", "#737f78", "#909c95", "#b8c3bd", "#d4dcd7", "#e8ede9"]
+      },
+      "chalk-2": {
+        "role": "neutral",
+        "displayName": "Chalk Secondary",
+        "canonical": "#b8c3bd",
+        "tonalRamp": ["#2b332f", "#3f4944", "#58635d", "#737f78", "#909c95", "#a7b2ac", "#b8c3bd", "#e8ede9"]
+      },
+      "chalk-muted": {
+        "role": "neutral",
+        "displayName": "Chalk Muted",
+        "canonical": "#8c9a94",
+        "tonalRamp": ["#242c29", "#35403b", "#4a5751", "#5f6e68", "#74837d", "#8c9a94", "#aeb9b3", "#d6dcd8"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#293234",
+        "tonalRamp": ["#293234", "#354043", "#445155", "#566468", "#6d7b7f", "#8a9698", "#b4bdbc", "#e8ede9"]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "#3a474a",
+        "tonalRamp": ["#2a3436", "#354144", "#3a474a", "#4d5b5e", "#637174", "#7f8c8e", "#acb6b6", "#e8ede9"]
+      },
+      "signal-green": {
+        "role": "success",
+        "displayName": "Cleared Green",
+        "canonical": "#43b979",
+        "tonalRamp": ["#0a2e1c", "#0f4a2c", "#166b3f", "#1f8a53", "#2ea766", "#43b979", "#7bd4a1", "#c3eed6"]
+      },
+      "signal-amber": {
+        "role": "warning",
+        "displayName": "Signal Amber",
+        "canonical": "#e0a63a",
+        "tonalRamp": ["#3a2606", "#5c3c0a", "#7a500e", "#a06812", "#c2821f", "#e0a63a", "#efc578", "#f8e6c4"]
+      },
+      "amber-fill": {
+        "role": "primary",
+        "displayName": "Amber Fill",
+        "canonical": "#e0a63a",
+        "tonalRamp": ["#3a2606", "#5c3c0a", "#7a500e", "#a06812", "#c2821f", "#e0a63a", "#efc578", "#f8e6c4"]
+      },
+      "signal-red": {
+        "role": "danger",
+        "displayName": "Conflict Red",
+        "canonical": "#e0564f",
+        "tonalRamp": ["#3a0f0c", "#5c1814", "#7d211b", "#a32b23", "#c93a31", "#e0564f", "#ec8b86", "#f7cfcc"]
+      },
+      "signal-blue": {
+        "role": "info",
+        "displayName": "In-Flight Blue",
+        "canonical": "#6f9fd8",
+        "tonalRamp": ["#0d1f33", "#15324f", "#1f4a70", "#2e6492", "#4782b6", "#6f9fd8", "#a5c5ea", "#dceaf8"]
+      },
+      "signal-violet": {
+        "role": "refunded",
+        "displayName": "Refund Violet",
+        "canonical": "#b08bd6",
+        "tonalRamp": ["#22152f", "#39234f", "#523470", "#6d4893", "#8a63b5", "#b08bd6", "#d0b9e8", "#efe6f7"]
+      },
+      "topbar": {
+        "role": "neutral",
+        "displayName": "Topbar Graphite",
+        "canonical": "#0b0f10",
+        "tonalRamp": ["#0b0f10", "#121819", "#1b2224", "#273032", "#364144", "#536063", "#8a9698", "#e8ede9"]
+      },
+      "day-rack": {
+        "role": "neutral",
+        "displayName": "Day Rack",
+        "canonical": "#dcded7",
+        "tonalRamp": ["#2b302c", "#414743", "#59605b", "#737b76", "#8f9791", "#abb3ad", "#c4cac3", "#dcded7"]
+      },
+      "day-bay": {
+        "role": "neutral",
+        "displayName": "Day Bay",
+        "canonical": "#f4f4ef",
+        "tonalRamp": ["#30342f", "#484d47", "#626761", "#7d837c", "#999f98", "#b6bcb4", "#d7dad4", "#f4f4ef"]
+      },
+      "day-slip": {
+        "role": "neutral",
+        "displayName": "Day Strip",
+        "canonical": "#f3ead6",
+        "tonalRamp": ["#2c251a", "#473b2b", "#63523b", "#806e4f", "#a08c69", "#c2b08b", "#dfd2b5", "#f3ead6"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page titles only." },
+      "body": { "displayName": "Body", "purpose": "Prose, table cells, rail copy." },
+      "label": { "displayName": "Bay Label", "purpose": "Column headers, bay labels, rail labels." },
+      "data": { "displayName": "Data", "purpose": "IDs, timestamps, amounts, counts, codes." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "state-change", "value": "0.12s ease", "purpose": "Button, border and hover state changes." },
+      { "name": "drawer-enter", "value": "0.16s ease", "purpose": "Drawer slide-in; disabled by prefers-reduced-motion." },
+      { "name": "strip-update", "value": "0.3s ease", "purpose": "Bar width and strip state updates; disabled by prefers-reduced-motion." },
+      { "name": "skeleton-shimmer", "value": "1.5s ease infinite", "purpose": "Loading skeletons; disabled by prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "xl", "value": "1279px" },
+      { "name": "lg", "value": "1100px" },
+      { "name": "md", "value": "1023px" },
+      { "name": "sm", "value": "767px" },
+      { "name": "xs", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single affirmative action on a surface: refresh, retry, run the gated demo.",
+      "html": "<button class=\"ds-btn-primary\">Refresh</button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; min-height:32px; padding:6px 10px; border:1px solid var(--amber-fill); border-radius:2px; background:var(--amber-fill); color:#17130a; font:inherit; font-size:0.75rem; font-weight:600; cursor:pointer; transition:background 0.12s ease, border-color 0.12s ease; } .ds-btn-primary:hover { background:color-mix(in srgb, var(--amber-fill) 82%, #fff); border-color:color-mix(in srgb, var(--amber-fill) 82%, #fff); } .ds-btn-primary:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }"
+    },
+    {
+      "name": "Default Button",
+      "kind": "button",
+      "refersTo": "button-default",
+      "description": "Secondary actions: details, clear, older, newer, open a dossier.",
+      "html": "<button class=\"ds-btn\">Details</button>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; justify-content:center; min-height:32px; padding:6px 10px; border:1px solid var(--slip-edge); border-radius:2px; background:var(--slip); color:var(--press); font:inherit; font-size:0.75rem; font-weight:600; cursor:pointer; transition:background 0.12s ease; } .ds-btn:hover { background:var(--slip-2); } .ds-btn:focus-visible { outline:2px solid var(--press); outline-offset:2px; }"
+    },
+    {
+      "name": "State Stamp",
+      "kind": "chip",
+      "refersTo": "badge-success",
+      "description": "A text-first state mark with a filled square; color reinforces, never replaces, the word.",
+      "html": "<span class=\"ds-stamp\">Captured</span>",
+      "css": ".ds-stamp { display:inline-flex; align-items:center; gap:4px; padding:2px 7px; border:1px solid color-mix(in srgb, var(--signal-green) 42%, transparent); border-radius:2px; background:var(--signal-green-soft); color:var(--signal-green); font-family:var(--font-mono); font-size:0.56rem; font-weight:650; letter-spacing:0.06em; text-transform:uppercase; white-space:nowrap; } .ds-stamp::before { content:''; width:0.3rem; height:0.3rem; background:currentColor; }"
+    },
+    {
+      "name": "Bay Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "A flat bay separated by a hairline, never a floating shadowed card.",
+      "html": "<section class=\"ds-card\"><h2>Event register</h2><p>Latest events by arrival.</p></section>",
+      "css": ".ds-card { background:var(--bay); border:1px solid var(--rule); border-radius:4px; padding:16px; color:var(--chalk); } .ds-card h2 { margin:0; font-size:0.88rem; font-weight:650; letter-spacing:-0.01em; } .ds-card p { margin:4px 0 0; color:var(--chalk-muted); font-size:0.73rem; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A standard search field inside the card header it scopes.",
+      "html": "<input class=\"ds-input\" type=\"search\" placeholder=\"Search by charge id\" />",
+      "css": ".ds-input { width:100%; min-height:32px; padding:6px 9px; border:1px solid var(--rule-strong); border-radius:2px; background:var(--bay-2); color:var(--chalk); font:inherit; font-size:0.78rem; } .ds-input::placeholder { color:var(--chalk-muted); } .ds-input:focus-visible { outline:2px solid var(--focus); outline-offset:2px; border-color:var(--focus); }"
+    },
+    {
+      "name": "Navigation Tab",
+      "kind": "nav",
+      "refersTo": "button-default",
+      "description": "A standard tab in the top utility bar; the active tab is a manila strip pulled from the rack.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Overview</a><a class=\"is-active\" href=\"#\">Events</a><a href=\"#\">Charges</a></nav>",
+      "css": ".ds-nav { display:flex; gap:2px; background:var(--topbar); padding:6px; } .ds-nav a { padding:6px 10px; border:1px solid transparent; border-radius:2px; color:var(--topbar-muted); text-decoration:none; font-size:0.76rem; font-weight:550; } .ds-nav a:hover { background:rgba(255,255,255,0.08); color:var(--topbar-ink); } .ds-nav a.is-active { background:var(--slip); border-color:var(--slip-edge); color:var(--press); font-weight:700; } .ds-nav a:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }"
+    },
+    {
+      "name": "Strip Board",
+      "kind": "table",
+      "refersTo": "card",
+      "description": "A dark rack of manila strip rows; each row keeps its identity while its state is stamped in place.",
+      "html": "<table class=\"ds-board\"><thead><tr><th>Event</th><th>State</th></tr></thead><tbody><tr class=\"ds-strip\"><td>evt_demo_…</td><td>Applied</td></tr></tbody></table>",
+      "css": ".ds-board { width:100%; border-collapse:separate; border-spacing:0 4px; } .ds-board th { padding:4px 10px; border-bottom:1px solid var(--rule-strong); color:var(--chalk-muted); font-family:var(--font-narrow); font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; text-align:left; } .ds-strip td { padding:8px 10px; background:var(--slip); border-top:1px solid var(--slip-edge); border-bottom:1px solid var(--slip-edge); color:var(--press); } .ds-strip td:first-child { border-left:1px solid var(--slip-edge); border-right:1px dashed var(--slip-edge); border-radius:2px 0 0 2px; } .ds-strip td:last-child { border-right:1px solid var(--slip-edge); border-radius:0 2px 2px 0; } .ds-strip:hover td { background:var(--slip-2); }"
+    },
+    {
+      "name": "Revision Chain",
+      "kind": "custom",
+      "refersTo": "badge-success",
+      "description": "The signature move: a row of punched cells with a tick on the current revision and dashed future cells.",
+      "html": "<span class=\"ds-chain\" role=\"img\" aria-label=\"Revision: Created → Authorized → Captured · Authorized\"><i class=\"done\"></i><i class=\"done current\"></i><i class=\"future\"></i></span>",
+      "css": ".ds-chain { display:inline-flex; gap:3px; position:relative; } .ds-chain::before { content:''; position:absolute; left:0; right:0; top:50%; height:1px; background:color-mix(in srgb, currentColor 26%, transparent); } .ds-chain i { position:relative; z-index:1; width:0.95rem; height:0.68rem; border:1px solid color-mix(in srgb, currentColor 55%, transparent); border-radius:2px; background:var(--slip); } .ds-chain i.done { background:var(--signal-green); border-color:var(--signal-green); } .ds-chain i.current::after { content:''; position:absolute; left:50%; top:-5px; width:2px; height:3px; transform:translateX(-50%); background:currentColor; } .ds-chain i.future { border-style:dashed; }"
+    },
+    {
+      "name": "Clearance Stamp",
+      "kind": "custom",
+      "refersTo": "badge-success",
+      "description": "The reconciliation result as a rotated bounded stamp on the manila clearance sheet.",
+      "html": "<span class=\"ds-clearance\">No differences<small>3,690 charges checked</small></span>",
+      "css": ".ds-clearance { display:inline-flex; flex-direction:column; align-items:center; gap:2px; padding:6px 9px; border:2px solid currentColor; border-radius:2px; color:var(--signal-green-ink); font-family:var(--font-narrow); font-size:0.72rem; font-weight:700; letter-spacing:0.12em; line-height:1.1; text-transform:uppercase; transform:rotate(-1.5deg); } .ds-clearance small { font-family:var(--font-mono); font-size:0.55rem; font-weight:500; letter-spacing:0.04em; }"
+    },
+    {
+      "name": "Drawer Dossier",
+      "kind": "dialog",
+      "refersTo": "card",
+      "description": "A right-side dossier with a manila header strip, a dark bay body and a focus trap.",
+      "html": "<div class=\"ds-drawer\" role=\"dialog\" aria-modal=\"true\"><header>Charge detail</header><div class=\"ds-drawer-body\">…</div></div>",
+      "css": ".ds-drawer { position:fixed; top:0; right:0; width:min(44rem,100%); height:100vh; display:flex; flex-direction:column; background:var(--bay); border-left:1px solid var(--rule-strong); } .ds-drawer header { padding:14px 16px; background:var(--slip); color:var(--press); border-bottom:1px solid var(--slip-edge); font-weight:650; } .ds-drawer-body { padding:18px; overflow-y:auto; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Strip Rack",
+    "overview": "The dashboard is an approach-control strip bay, not a SaaS dashboard. Every webhook arrives as a paper strip, is filed in a bay in time order, and keeps its identity while its state is stamped in place. The surface is a dark rack of charcoal bays with manila paper strips; the world enters through type, palette, density and one signature move; navigation and controls stay standard web controls, because the operator came to read state.",
+    "keyCharacteristics": [
+      "Rack charcoal ground with manila strips as the data surface.",
+      "Signal green, amber, red and violet only where they carry domain state.",
+      "Archivo for reading and UI, Archivo Narrow for bay labels, Azeret Mono for evidence.",
+      "Flat surfaces separated by hairlines and 4px rack gaps; no decorative shadows.",
+      "Standard top-bar navigation; no permanent sidebar and no terminal costume.",
+      "The revision chain and the clearance stamp are the product's signatures."
+    ],
+    "rules": [
+      { "name": "The Signal Is State Rule", "body": "Signal colors mark domain state, the affirmative action, or the current revision. They never fill a card, a decorative edge, or a hover wash.", "section": "colors" },
+      { "name": "The Paper Carries Data Rule", "body": "Manila is the data surface. Do not use it for decoration, page chrome or a second card layer.", "section": "colors" },
+      { "name": "The Press Ink Rule", "body": "Text and links on a manila surface use Press Ink, never Chalk. Chalk is for the rack only.", "section": "colors" },
+      { "name": "The State Is Text Rule", "body": "A stamp always states its meaning in words. Color may reinforce, never replace, the label.", "section": "colors" },
+      { "name": "The Monospace Is Measurement Rule", "body": "Azeret Mono is for IDs, timestamps, amounts, counts, codes and the minute table. It is never body copy, a heading, a button, or a costume for technical.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "If a border or rack gap can separate two surfaces, no shadow is allowed. Focus is the only state that may paint outside the line.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep data on manila strips and chrome on the rack.",
+      "Do draw the revision chain as punched cells: fill done and current, dash future, strike rejected.",
+      "Do keep every figure in tabular numerals and every ID in Azeret Mono.",
+      "Do state every state in words on a stamp; color is reinforcement.",
+      "Do put filters inside the header of the card they filter.",
+      "Do let the bay rail hold system health, last clearance, charges by state and late events.",
+      "Do test both EN/ES and light/dark at 1920, 1024, 900, 768 and 390.",
+      "Do announce counters, pagination and copy feedback with aria-live.",
+      "Do trap focus in the drawer and set the shell and the skip link inert while it is open."
+    ],
+    "donts": [
+      "Don't add a permanent sidebar; navigation lives in the top utility bar.",
+      "Don't use signal colors as decoration, a second accent or a hover wash.",
+      "Don't use monospace for prose, headings or buttons.",
+      "Don't use shadows, glass, gradient text or one-sided colored bars.",
+      "Don't paint the healthy authorized state with the warning tone; use blue.",
+      "Don't put Chalk text or links on manila; use Press Ink.",
+      "Don't replace the strip board with a standard white table, or the chain with a progress bar.",
+      "Don't promote the Demo tab while DEMO_MODE is off.",
+      "Don't add a second display face or a new material without a documented reason."
+    ]
+  }
+}

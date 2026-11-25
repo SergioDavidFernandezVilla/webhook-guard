@@ -1,0 +1,120 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: gofmt
+        run: |
+          unformatted="$(gofmt -l .)"
+          if [ -n "$unformatted" ]; then
+            echo "unformatted files:"
+            echo "$unformatted"
+            exit 1
+          fi
+
+      - name: build (guarded)
+        run: go build ./...
+
+      - name: build (naive)
+        run: go build -tags naive ./...
+
+      - name: vet
+        run: go vet ./...
+
+      - name: test (guarded)
+        run: go test ./...
+
+      - name: test (naive)
+        run: go test -tags naive ./...
+
+      - name: compose config
+        run: docker compose config --quiet
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: golangci-lint (guarded)
+        uses: golangci/golangci-lint-action@v8
+        with:
+          version: v2.15.0
+          args: --timeout 5m
+
+      - name: golangci-lint (naive)
+        uses: golangci/golangci-lint-action@v8
+        with:
+          version: v2.15.0
+          args: --build-tags "integration naive" --timeout 5m
+
+  integration:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: webhook
+          POSTGRES_PASSWORD: webhook
+          POSTGRES_DB: webhook_guard
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U webhook -d webhook_guard"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
+    env:
+      TEST_DATABASE_URL: postgres://webhook:webhook@localhost:5432/webhook_guard?sslmode=disable
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: migrate
+        run: |
+          go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.3
+          "$(go env GOPATH)/bin/migrate" -path migrations -database "$TEST_DATABASE_URL" up
+
+      - name: integration (guarded)
+        run: go test -count=1 -p 1 -tags integration ./internal/... ./test/
+
+      - name: integration (naive)
+        run: go test -count=1 -p 1 -tags "integration naive" ./internal/... ./test/
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build

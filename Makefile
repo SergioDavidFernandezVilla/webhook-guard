@@ -1,7 +1,7 @@
 COMPOSE ?= docker compose
 SERVICE ?= app
 
-.PHONY: up down logs ps build migrate load naive test tidy
+.PHONY: up down logs ps build migrate load naive dashboard dashboard-build dashboard-dev test tidy
 
 up:
 	$(COMPOSE) up -d --build
@@ -26,6 +26,15 @@ load:
 
 naive:
 	$(COMPOSE) --profile naive up -d --build app-naive
+
+dashboard:
+	$(COMPOSE) --profile dashboard up -d --build dashboard
+
+dashboard-build:
+	$(COMPOSE) --profile dashboard build dashboard
+
+dashboard-dev:
+	cd web && npm run dev
 
 test:
 	go test ./...

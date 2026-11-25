@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.svelte";
+import ComparePage from "../components/ComparePage.svelte";
+---
+
+<Base title="Guarded vs naive">
+  <div class="app-shell">
+    <Nav client:load initialPath={Astro.url.pathname} />
+    <main id="main" class="page">
+      <ComparePage client:load />
+    </main>
+  </div>
+</Base>

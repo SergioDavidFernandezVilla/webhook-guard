@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.svelte";
+import Overview from "../components/Overview.svelte";
+---
+
+<Base title="Overview">
+  <div class="app-shell">
+    <Nav client:load initialPath={Astro.url.pathname} />
+    <main id="main" class="page">
+      <Overview client:load />
+    </main>
+  </div>
+</Base>
